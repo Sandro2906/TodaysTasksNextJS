@@ -5,10 +5,10 @@ import React from 'react'
 
 
 const UserForm = () => {
-
+const router = useRouter();
     const [title,setTitle] = useState('')
     const [task,setTask] = useState('')
-    const router = useRouter();
+    
 
     
     async function handleSubmit(e){
@@ -30,7 +30,7 @@ const UserForm = () => {
   return (
     <div className='w-full min-h-screen flex justify-center items-center flex-col'>
     <h1 className="text-3xl text-white font-bold">Today's Tasks</h1>
-      <p className='text-white mb-5'>Please fill in the form below</p>
+    
     <form className='flex flex-col items-center' onSubmit={handleSubmit}>
         <input placeholder='Title' className='text-black w-[300px] h-auto p-2 border-2 border-yellow-500 rounded-md' type='text' value={title} onChange={e => setTitle(e.target.value)}/>
         <textarea rows={6} placeholder='Task' className='text-black w-[300px]  p-2 border-2 border-yellow-500 rounded-md my-2'  value={task} onChange={e => setTask(e.target.value)}/>
